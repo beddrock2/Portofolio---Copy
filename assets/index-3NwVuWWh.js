@@ -7056,7 +7056,7 @@ function yd() {
       onEnter: () => n(!0)
    });
    return Q.jsxs("div", {
-      className: "min-h-screen bg-black text-white",
+      className: "min-h-screen text-white holo-background",
       children: [Q.jsxs("div", {
          className: "relative overflow-hidden",
          children: [Q.jsx("div", {
@@ -7196,7 +7196,7 @@ function yd() {
                   url: "https://bimoli.vercel.app",
                   description: "Bimoli."
                }, {
-                  title: "B×R",
+                  title: "BÃ—R",
                   url: "https://bxr-test.vercel.app",
                   description: "Website i made to download games!"
                }, {

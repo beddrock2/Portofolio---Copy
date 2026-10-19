@@ -1518,3 +1518,62 @@ html {
 		line-height: 1
 	}
 }
+/* Infinite red grid background */
+.holo-background {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(132, 11, 23, .38) 0%, rgba(38, 3, 8, .28) 34%, transparent 68%),
+    linear-gradient(180deg, #0a0102 0%, #030102 38%, #060102 72%, #010101 100%);
+}
+
+.holo-background::before,
+.holo-background::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.holo-background::before {
+  background-image:
+    linear-gradient(rgba(255, 45, 62, .08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 45, 62, .08) 1px, transparent 1px),
+    linear-gradient(rgba(255, 68, 81, .15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 68, 81, .15) 1px, transparent 1px);
+  background-size: 24px 24px, 24px 24px, 120px 120px, 120px 120px;
+  background-position: 0 0, 0 0, 0 0, 0 0;
+  opacity: .8;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .85), black 20%, rgba(0, 0, 0, .75) 72%, transparent 100%);
+  animation: infinite-grid 20s linear infinite;
+}
+
+.holo-background::after {
+  background:
+    repeating-linear-gradient(180deg, rgba(255, 30, 48, .025) 0 1px, transparent 1px 5px),
+    radial-gradient(ellipse at 50% 24%, rgba(188, 15, 30, .18), transparent 48%),
+    linear-gradient(90deg, rgba(0, 0, 0, .72), transparent 22% 78%, rgba(0, 0, 0, .72));
+  mix-blend-mode: screen;
+  animation: grid-pulse 8s ease-in-out infinite alternate;
+}
+
+
+/* Blend the hero into the site-wide grid instead of ending on a black block. */
+.holo-background > .relative:first-child > .absolute.inset-0:nth-child(2) {
+  background-image: linear-gradient(180deg, rgba(82, 7, 15, .42) 0%, rgba(8, 1, 2, .80) 36%, rgba(2, 1, 1, .97) 90%, rgba(2, 1, 1, .84) 85%, rgba(4, 1, 2, .42) 94%, transparent 100%) !important;
+}
+@keyframes infinite-grid {
+  from { background-position: 0 0, 0 0, 0 0, 0 0; }
+  to { background-position: 0 120px, 120px 0, 0 120px, 120px 0; }
+}
+
+@keyframes grid-pulse {
+  from { opacity: .42; }
+  to { opacity: .82; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .holo-background::before,
+  .holo-background::after { animation: none; }
+}
