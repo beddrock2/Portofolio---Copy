@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/25/25231.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Portfolio" />
+    <meta property="og:description" content="Innovative developer with a passion for creating stunning, high-performance web applications. Explore my portfolio showcasing creative design and technical expertise." />
+    <meta property="og:image" content="https://scalar.usc.edu/works/about-myself/media/about_me.jpg" />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1080" />
+    <meta property="og:image:type" content="image/jpg" />
+    <meta property="og:site_name" content="Portfolio" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://scalar.usc.edu/works/about-myself/media/about_me.jpg" />
+    <meta property="theme-color" content="#5e1717" />
+    <title>@</title>
+    <style>
+        html, body, #root {
+            background-color: black !important;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            color: white;
+        }
+    </style>
+    <script>
+      const t = "@Bedd_Rock";
+      let c = "@";
+      let a = true;
+      let i = 1;
+      let to;
+
+      function u() {
+        if (a) {
+          c = t.slice(0, i + 1);
+          i++;
+          if (i === t.length) {
+            a = false;
+          }
+        } else {
+          c = t.slice(0, i);
+          i--;
+          if (i === 0) {
+            a = true;
+          }
+        }
+        document.title = c;
+        to = setTimeout(u, 300);
+      }
+
+      window.addEventListener('load', () => {
+        u();
+      });
+
+      window.addEventListener('unload', () => {
+        clearTimeout(to);
+      });
+    </script>
+  <script type="module" crossorigin src="/assets/index-3NwVuWWh.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index--esHUY6a.css">
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
